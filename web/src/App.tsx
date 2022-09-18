@@ -1,13 +1,14 @@
-import "./styles/main.css";
-
 import { useState, useEffect } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
+import axios from "axios";
 
 import logoImg from "./assets/logo-nlw-esports.svg";
+import "./styles/main.css";
+
 import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 import { CreateAdModal } from "./components/CreateAdModal";
-import axios from "axios";
+
+import * as Dialog from "@radix-ui/react-dialog";
 
 interface Game {
   id: string;

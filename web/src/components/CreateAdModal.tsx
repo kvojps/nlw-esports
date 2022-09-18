@@ -1,10 +1,13 @@
+import { useState, useEffect, FormEvent } from "react";
+import axios from "axios";
+
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Checkbox from "@radix-ui/react-checkbox";
-import { Check, GameController } from "phosphor-react";
-import { Input } from "./Form/input";
-import { useState, useEffect, FormEvent } from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import axios from "axios";
+
+import { Check, GameController } from "phosphor-react";
+
+import { Input } from "./Form/input";
 
 interface Game {
   id: string;
@@ -35,14 +38,13 @@ export function CreateAdModal() {
         weekDays: weekDays.map(Number),
         hourStart: data.hourStart,
         hourEnd: data.hourEnd,
-        useVoiceChannel: useVoiceChannel
-      })
-      alert("Anúncio criado com sucesso :)")
+        useVoiceChannel: useVoiceChannel,
+      });
+      alert("Anúncio criado com sucesso :)");
     } catch (err) {
-      console.log(err)
-      alert("Erro ao criar o anúncio :(")
+      console.log(err);
+      alert("Erro ao criar o anúncio :(");
     }
-
   }
 
   return (
